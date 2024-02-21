@@ -1,4 +1,10 @@
 import 'package:collegemanagmentsystem/model.dart';
+import 'package:collegemanagmentsystem/pages/academicInfo.dart';
+import 'package:collegemanagmentsystem/pages/assignment.dart';
+import 'package:collegemanagmentsystem/pages/event.dart';
+import 'package:collegemanagmentsystem/pages/faculty.dart';
+import 'package:collegemanagmentsystem/pages/more.dart';
+import 'package:collegemanagmentsystem/pages/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -90,7 +96,7 @@ class homepage extends StatelessWidget {
                      // Navigate to the new page route when tapped
                      Navigator.push(
                        context,
-                       MaterialPageRoute(builder: (context) => academicInfo()),
+                       MaterialPageRoute(builder: (context) => academicinfo()),
                      );
                    },
                   child: Container(
@@ -153,7 +159,7 @@ class homepage extends StatelessWidget {
                     child: Column(
                       children: [
                         Image.asset(height: 60, model[1].image),
-                        Text(
+                        const Text(
                           "Assignment",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )
@@ -173,7 +179,7 @@ class homepage extends StatelessWidget {
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20),
                           bottomLeft: Radius.circular(20),
@@ -191,7 +197,7 @@ class homepage extends StatelessWidget {
                       children: [
                         Image.asset(
                             height: 60, color: Colors.black, model[2].image),
-                        Text(
+                        const Text(
                           "Event",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )
@@ -268,6 +274,44 @@ class homepage extends StatelessWidget {
                             height: 60, color: Colors.black87, model[4].image),
                         Text(
                           "Result",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    // Navigate to the new page route when tapped
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => more()),
+                    );
+                  },
+                  child: Container(// this is for Result--------------------------------------------------------------------------------------
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                          bottomLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(20)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 5,
+                          offset: Offset(0, 5),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                            height: 60, color: Colors.black87, model[9].image),
+                        Text(
+                          "More",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )
                       ],
